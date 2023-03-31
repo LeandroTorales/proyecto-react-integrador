@@ -1,13 +1,20 @@
 import React from "react";
-import styled from "styled-components";
-
-const Button = styled.div`
-`;
+import ContainerNavbar from "./containerNavbar/ContainerNavbar";
+import LinkNavbarComponent from "./links/LinkNavbarComponent";
+import LinkLogoNavbarComponent from "./links/LinkLogoNavbarComponent";
+import ContainerLinks from "./links/ContainerLinks";
 
 const Navbar = () => {
   return (
     <>
-      <Button>Navbar</Button>
+      <ContainerNavbar>
+        <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"https://twitter.com"} />
+        <ContainerLinks>
+          <LinkNavbarComponent nameLink={"Inicio"} to={"https://twitter.com"} />
+          <LinkNavbarComponent nameLink={"Marcas"} to={"https://google.com"} />
+          <LinkNavbarComponent nameLink={"Acerca de"} to={"https://twitter.com"} />
+        </ContainerLinks>
+      </ContainerNavbar>
     </>
   );
 };

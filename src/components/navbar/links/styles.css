@@ -1,0 +1,32 @@
+.container--links__navbar {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo--navbar {
+    font-size: 1.5rem;
+}
+
+.links--navbar {
+    font-size: 1.1rem;
+}
+
+.links--navbar,
+.logo--navbar {
+    padding: 6px 9px;
+    transition: all .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+}
+
+.links--navbar:hover,
+.logo--navbar:hover {
+    background-color: #474747;
+    border-radius: 4px;
+    border-style: outset;
+}
