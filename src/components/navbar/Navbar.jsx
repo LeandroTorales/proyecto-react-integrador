@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+
+const Button = styled.div`
+`;
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <>
+      <Button>Navbar</Button>
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
