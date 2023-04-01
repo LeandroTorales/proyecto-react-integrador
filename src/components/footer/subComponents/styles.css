@@ -1,0 +1,17 @@
+.small--text__footer {
+
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.text--big__footer {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.line--divisory__footer {
+    width: 90%;
+    height: 1px;
+    background-color: var(--BorderBottomSeparadorSecciones);
+}

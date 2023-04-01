@@ -1,0 +1,27 @@
+.container--footer__main {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-top: 1px solid var(--BorderBottomSeparadorSecciones);
+}
+
+.container--redes__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    padding: 0px 25px;
+    gap: 50px;
+}
+
+.container--texts__footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+}
