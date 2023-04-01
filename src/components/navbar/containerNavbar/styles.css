@@ -1,0 +1,11 @@
+.main--container__navbar {
+  height: 60px;
+  background-color: rgb(0 0 0);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  border-bottom: 1px solid var(--BorderBottomSeparadorSecciones);
+
+}
