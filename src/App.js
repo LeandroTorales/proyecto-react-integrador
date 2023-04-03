@@ -4,6 +4,7 @@ import GlobalStyles from "./components/globalStyles/GlobalStyles";
 import HomePage from "./components/homePage/HomePage";
 import ContainerFooter from "./components/footer/ContainerFooter";
 
+
 function App() {
   return (
     <>

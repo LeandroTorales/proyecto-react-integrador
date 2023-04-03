@@ -1,0 +1,17 @@
+.img--informationGraphics {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.title--information {
+    font-size: clamp(8px, 6vw, 22px);
+    text-align: left;
+    padding: 0px 10px;
+}
+
+.text--information {
+    font-size: clamp(8px, 6vw, 22px);
+    text-align: left;
+    padding: 0px 10px;
+}

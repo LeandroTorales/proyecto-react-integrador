@@ -1,12 +1,12 @@
 .small--text__footer {
 
-    font-size: 1.3rem;
+    font-size: clamp(7px, 3vw, 25px);
     text-transform: uppercase;
     font-weight: 200;
 }
 
 .text--big__footer {
-    font-size: 1.8rem;
+    font-size: clamp(9px, 3vw, 26px);
     font-weight: 300;
 }
 

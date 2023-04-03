@@ -1,0 +1,25 @@
+.container--main__informationGraphics {
+    border-top: 1px solid var(--BorderBottomSeparadorSecciones);
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 10px;
+}
+
+@media (max-width:768px) {
+    .container--main__informationGraphics {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1028px) {
+    .container--main__informationGraphics {
+        height: calc(200vh - 60px);
+        flex-direction: column;
+    }
+
+
+}

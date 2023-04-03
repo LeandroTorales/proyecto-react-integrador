@@ -1,0 +1,17 @@
+.box--information__graphics {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 450px;
+    height: 500px;
+    gap: 20px;
+    overflow: hidden;
+    border: 1px solid var(--BorderBottomSeparadorSecciones);
+}
+
+@media (max-width: 768px) {
+    .box--information__graphics {
+        width: 270px;
+    }
+}

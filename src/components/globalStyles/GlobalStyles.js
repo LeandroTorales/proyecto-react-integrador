@@ -24,6 +24,10 @@ body{
     --BorderBottomSeparadorSecciones: #818181;
 }
 
+a{
+    user-select: none;
+}
+
 a:any-link {
     color: white;
 }
