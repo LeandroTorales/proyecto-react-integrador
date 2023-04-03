@@ -24,6 +24,10 @@ body{
     --BorderBottomSeparadorSecciones: #818181;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 a{
     user-select: none;
 }
