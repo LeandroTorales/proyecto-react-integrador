@@ -1,0 +1,19 @@
+.onBlur--fondo {
+    backdrop-filter: blur(10px);
+    width: 50%;
+    height: calc(100vh - 60px);
+    position: absolute;
+    top: 60px;
+    right: -900px;
+    z-index: 1;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    user-select: none;
+}
+
+.activeBlur {
+    right: 0px;
+}

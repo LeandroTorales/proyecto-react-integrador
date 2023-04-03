@@ -1,9 +1,9 @@
 .background--image__presentationPage {
-    width: 50%;
-    height: calc(100vh - 60px);
-    background-image: url("https://wallscloud.net/img/resize/3840/2160/MM/2022-11-02-nvidia-rtx-4090-1-55054.png");
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-right: 1px solid var(--BorderBottomSeparadorSecciones);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

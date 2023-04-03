@@ -3,7 +3,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
 }
 
 .logo--navbar {
@@ -29,4 +33,33 @@
     background-color: #474747;
     border-radius: 4px;
     border-style: outset;
+}
+
+.icon {
+    font-size: 1.4rem;
+    padding: 6px 9px;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    border: none;
+
+}
+
+@media (max-width: 768px) {
+    .container--links__navbar {
+        background: black;
+        position: absolute;
+        width: 50%;
+        flex-direction: column;
+        height: calc(100vh - 60px);
+        top: 60px;
+        left: -900px;
+
+        z-index: 1;
+        gap: 50px;
+    }
+
+    .active {
+        left: 0px;
+    }
 }
