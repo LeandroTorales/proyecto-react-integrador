@@ -1,0 +1,31 @@
+.button--generacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    padding: 25px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 10px;
+    border: 5px solid #6e6e6e;
+    border-style: inset;
+    cursor: pointer;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    user-select: none;
+}
+
+.button--generacion:hover {
+    scale: calc(1.05);
+}
+
+.button--generacion:active {
+    background-color: #474747;
+    border: 5px solid white;
+    border-style: outset;
+    color: white;
+}

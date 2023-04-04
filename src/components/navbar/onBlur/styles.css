@@ -4,7 +4,7 @@
     height: calc(100vh - 60px);
     position: absolute;
     top: 60px;
-    right: -900px;
+    right: -9000px;
     z-index: 1;
     transition: all .5s;
     -webkit-transition: all .5s;

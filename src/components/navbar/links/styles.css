@@ -53,7 +53,7 @@
         flex-direction: column;
         height: calc(100vh - 60px);
         top: 60px;
-        left: -900px;
+        left: -9000px;
 
         z-index: 1;
         gap: 50px;

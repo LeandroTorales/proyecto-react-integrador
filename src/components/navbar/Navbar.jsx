@@ -14,12 +14,12 @@ const Navbar = () => {
         <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"https://twitter.com"} />
         <ContainerLinks>
           <LinkNavbarComponent nameLink={"Inicio"} to={"https://twitter.com"} />
-          <LinkNavbarComponent nameLink={"Marcas"} to={"https://google.com"} />
+          <LinkNavbarComponent nameLink={"Generaciones"} to={"https://google.com"} />
           <LinkNavbarComponent nameLink={"Acerca de"} to={"https://twitter.com"} />
           <IconCart />
         </ContainerLinks>
         <BarsHamburguesaNavbar />
-        <FondoOnBlur/>
+        <FondoOnBlur />
       </ContainerNavbar>
     </>
   );
