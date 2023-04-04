@@ -1,0 +1,12 @@
+.textMain--HomePage {
+    font-weight: 300;
+    font-size: clamp(30px, 8vw, 50px);
+    text-align: left;
+    padding: 0px 40px;
+}
+
+@media (max-width: 768px) {
+    .textMain--HomePage {
+        text-align: center;
+    }
+}
