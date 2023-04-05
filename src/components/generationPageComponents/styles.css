@@ -1,0 +1,39 @@
+.wrapper--generación {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+}
+
+.wrapper--cardProductGrafica {
+    width: 100%;
+    background: white;
+    height: 200px;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper--products {
+    background-color: white;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper--asideProducts {
+    width: 20%;
+    background-color: rgb(255, 0, 0);
+    height: 100%;
+}
+
+.wrapper--containerCardProducts {
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+}

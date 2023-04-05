@@ -11,11 +11,11 @@ const Navbar = () => {
   return (
     <>
       <ContainerNavbar>
-        <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"https://twitter.com"} />
+        <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"/"} />
         <ContainerLinks>
-          <LinkNavbarComponent nameLink={"Inicio"} to={"https://twitter.com"} />
+          <LinkNavbarComponent nameLink={"Inicio"} to={"/"} />
           <LinkNavbarComponent nameLink={"Generaciones"} to={"https://google.com"} />
-          <LinkNavbarComponent nameLink={"Acerca de"} to={"https://twitter.com"} />
+          <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
           <IconCart />
         </ContainerLinks>
         <BarsHamburguesaNavbar />

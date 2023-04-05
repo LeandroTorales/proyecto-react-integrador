@@ -9,8 +9,23 @@ const GlobalStyles = createGlobalStyle`
   font-family: "Roboto", sans-serif;  
   margin: 0px;
   padding: 0px;
-  text-decoration: none;
+  text-decoration: none;scrollbar-width: auto;
+    scrollbar-color: #000000 #e3e3e3;
 }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e3e3e3;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 2px;
+    border: 3px solid #e3e3e3;
+  }
 
 body{
     margin: 0px;

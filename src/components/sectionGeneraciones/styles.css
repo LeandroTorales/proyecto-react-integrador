@@ -1,9 +1,26 @@
 .sectionGeneraciones--wrapper {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     height: calc(100vh - 60px);
     border-top: 1px solid var(--BorderBottomSeparadorSecciones);
+    justify-content: center;
+    gap: 50px;
+}
+
+.wrapper--generaciones {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.title--generaciones {
+    font-size: clamp(20px, 3vw, 40px);
+    text-align: center;
+    font-weight: 400;
 }

@@ -12,15 +12,25 @@
     border-style: inset;
     cursor: pointer;
     transition: all .3s;
+    text-align: center;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
     -o-transition: all .3s;
     user-select: none;
+    background-color: white;
 }
 
 .button--generacion:hover {
     scale: calc(1.05);
+}
+
+.button--generacion:visited {
+    color: black;
+}
+
+.button--generacion:any-link {
+    color: black;
 }
 
 .button--generacion:active {
