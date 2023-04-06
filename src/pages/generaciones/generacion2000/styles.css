@@ -1,0 +1,28 @@
+.icon--filter__forResponsive {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .icon--filter__forResponsive {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        background: black;
+        border-radius: 25px;
+        margin: 10px;
+        border: 2px solid black;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+    }
+
+    .activeAsideButton {
+        position: absolute;
+        z-index: 1;
+        right: 0px;
+        top: 57px;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+}

@@ -14,7 +14,7 @@ const Navbar = () => {
         <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"/"} />
         <ContainerLinks>
           <LinkNavbarComponent nameLink={"Inicio"} to={"/"} />
-          <LinkNavbarComponent nameLink={"Generaciones"} to={"https://google.com"} />
+          <LinkNavbarComponent nameLink={"Generaciones"} to={"/generaciones"} />
           <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
           <IconCart />
         </ContainerLinks>

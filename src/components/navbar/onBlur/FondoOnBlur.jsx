@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../../../redux/slices/toggleMenuSlice";
 
 const FondoOnBlur = () => {
-  const state = useSelector((state) => state.openMenu);
+  const { openMenu } = useSelector((state) => state.toggleMenuSlice);
+  
   const dispatch = useDispatch();
 
   return (
     <div
-      className={`onBlur--fondo ${state ? "activeBlur" : ""}`}
+      className={`onBlur--fondo ${openMenu ? "activeBlur" : ""}`}
       onClick={() => dispatch(toggleMenu())}
     ></div>
   );

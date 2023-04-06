@@ -1,8 +1,15 @@
 import React from "react";
 import "./styles.css";
+import { useSelector } from "react-redux";
 
 const WrapperAsideProducts = ({ children }) => {
-  return <aside className="wrapper--asideProducts">{children}</aside>;
+  const { openFiltersAside } = useSelector((state) => state.toggleFiltersAsideProductsSlice);
+
+  return (
+    <aside className={`wrapper--asideProducts ${openFiltersAside ? "activeAsideProducts" : ""}`}>
+      {children}
+    </aside>
+  );
 };
 
 export default WrapperAsideProducts;

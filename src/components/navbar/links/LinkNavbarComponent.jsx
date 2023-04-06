@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const LinkNavbarComponent = ({ nameLink, to }) => {
   return (
-    <NavLink className="links--navbar" to={`${to}`}>
+    <NavLink className="links--navbar linkOfNavbar" to={`${to}`}>
       {nameLink}
     </NavLink>
   );

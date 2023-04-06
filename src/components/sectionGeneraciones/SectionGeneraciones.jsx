@@ -1,11 +1,22 @@
 import React from "react";
 import "./styles.css";
 import LinksGeneraciones from "./linksGeneraciones/LinksGeneraciones";
+import { useLocation, useParams } from "react-router-dom";
 
 const SectionGeneraciones = () => {
+  const { pathname } = useLocation();
+
+  const ternarioLocation = () => {
+    if (pathname != "/generaciones") return false;
+    return true;
+  };
+
   return (
     <>
-      <div className="sectionGeneraciones--wrapper">
+      <div
+        className="sectionGeneraciones--wrapper"
+        style={{ marginTop: ternarioLocation() ? "60px" : "" }}
+      >
         <h2 className="title--generaciones">
           Estas son nuestras generaciones de tarjetas gráficas:
         </h2>

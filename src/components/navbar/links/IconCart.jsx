@@ -5,8 +5,8 @@ import "./styles.css";
 const IconCart = () => {
   return (
     <>
-      <div className="icon">
-        <button className="icon" /* onClick={dispatch(openMenu())} */>
+      <div className="icon linkOfNavbar">
+        <button className="icon ">
           <AiOutlineShoppingCart />
         </button>
       </div>

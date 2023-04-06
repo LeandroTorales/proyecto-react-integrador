@@ -5,6 +5,7 @@
     align-items: center;
     margin-top: 60px;
     height: calc(100vh - 60px);
+    color: black;
 }
 
 .wrapper--cardProductGrafica {
@@ -15,6 +16,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    padding: 0px 20px;
 }
 
 .wrapper--products {
@@ -36,4 +39,51 @@
     width: 80%;
     height: 100%;
     overflow-y: scroll;
+}
+
+.img--product {
+    width: auto;
+    height: 175px;
+    object-fit: cover;
+}
+
+.container--titleYPrice {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.name--product {
+    font-size: clamp(10px, 3vw, 27px);
+    font-weight: 400;
+}
+
+.name--product::first-letter {
+    text-transform: uppercase;
+}
+
+.price--product {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+@media (max-width:768px) {
+    .wrapper--asideProducts {
+        width: 100%;
+        position: fixed;
+        display: flex;
+        height: calc(100vh - 60px);
+        left: -9000px;
+
+    }
+
+    .activeAsideProducts {
+        left: 0px;
+    }
+
+    .wrapper--containerCardProducts {
+        width: 100%;
+    }
 }

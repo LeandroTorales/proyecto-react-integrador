@@ -9,8 +9,8 @@ const BarsHamburguesaNavbar = () => {
 
   return (
     <>
-      <div className="icon icon--hamburguesa" onClick={() => dispatch(toggleMenu())}>
-        <FaBars />
+      <div className="icon icon--hamburguesa linkOfNavbar" onClick={() => dispatch(toggleMenu())}>
+        <FaBars className="linkOfNavbar" />
       </div>
     </>
   );
