@@ -4,6 +4,7 @@ import WrapperProducts from "../../../components/seriePageComponents/WrapperProd
 import WrapperAsideProducts from "../../../components/seriePageComponents/WrapperAsideProducts";
 import WrapperContainerProducts from "../../../components/seriePageComponents/WrapperContainerProducts";
 import CardProductGrafica from "../../../components/seriePageComponents/CardProductGrafica";
+import { products } from "../../../data/products";
 
 const Serie40 = () => {
   return (
@@ -11,10 +12,38 @@ const Serie40 = () => {
       <WrapperProducts>
         <WrapperAsideProducts></WrapperAsideProducts>
         <WrapperContainerProducts>
-          <CardProductGrafica></CardProductGrafica>
-          <CardProductGrafica></CardProductGrafica>
-          <CardProductGrafica></CardProductGrafica>
-          <CardProductGrafica></CardProductGrafica>
+          {products
+            .filter((prod) => prod.serie === 40)
+            .map(
+              ({
+                id,
+                serie,
+                modelo,
+                fabricante,
+                marca,
+                isTi,
+                stock,
+                price,
+                tamañoDeMemoria,
+                tipoDeMemoriaGrafica,
+                imgProduct,
+              }) => (
+                <CardProductGrafica
+                  id={id}
+                  serie={serie}
+                  modelo={modelo}
+                  fabricante={fabricante}
+                  marca={marca}
+                  isTi={isTi}
+                  stock={stock}
+                  price={price}
+                  tamañoDeMemoria={tamañoDeMemoria}
+                  tipoDeMemoriaGrafica={tipoDeMemoriaGrafica}
+                  imgProduct={imgProduct}
+                  key={id}
+                />
+              )
+            )}
         </WrapperContainerProducts>
       </WrapperProducts>
     </WrapperSerie>

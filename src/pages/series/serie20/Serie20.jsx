@@ -8,6 +8,7 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFiltersAside } from "../../../redux/slices/toggleFiltersAsideProductsSlice";
+import { products } from "../../../data/products";
 
 const Serie20 = () => {
   const dispatch = useDispatch();
@@ -26,12 +27,39 @@ const Serie20 = () => {
               }`}
               onClick={() => dispatch(toggleFiltersAside())}
             />
-            <CardProductGrafica></CardProductGrafica>
-            <CardProductGrafica></CardProductGrafica>
-            <CardProductGrafica></CardProductGrafica>
-            <CardProductGrafica></CardProductGrafica>
-            <CardProductGrafica></CardProductGrafica>
-            <CardProductGrafica></CardProductGrafica>
+
+            {products
+              .filter((prod) => prod.serie === 20)
+              .map(
+                ({
+                  id,
+                  serie,
+                  modelo,
+                  fabricante,
+                  marca,
+                  isTi,
+                  stock,
+                  price,
+                  tamañoDeMemoria,
+                  tipoDeMemoriaGrafica,
+                  imgProduct,
+                }) => (
+                  <CardProductGrafica
+                    id={id}
+                    serie={serie}
+                    modelo={modelo}
+                    fabricante={fabricante}
+                    marca={marca}
+                    isTi={isTi}
+                    stock={stock}
+                    price={price}
+                    tamañoDeMemoria={tamañoDeMemoria}
+                    tipoDeMemoriaGrafica={tipoDeMemoriaGrafica}
+                    imgProduct={imgProduct}
+                    key={id}
+                  />
+                )
+              )}
           </WrapperContainerProducts>
         </WrapperProducts>
       </WrapperSerie>

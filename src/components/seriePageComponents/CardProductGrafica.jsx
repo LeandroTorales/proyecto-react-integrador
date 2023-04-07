@@ -1,17 +1,29 @@
 import React from "react";
 import "./styles.css";
 
-const CardProductGrafica = () => {
+const CardProductGrafica = ({
+  id,
+  serie,
+  modelo,
+  fabricante,
+  marca,
+  isTi,
+  stock,
+  price,
+  tamañoDeMemoria,
+  tipoDeMemoriaGrafica,
+  imgProduct,
+}) => {
   return (
     <div className="wrapper--cardProductGrafica">
-      <img
-        src="https://images7.alphacoders.com/385/385737.jpg"
-        alt="imagen producto"
-        className="img--product"
-      />
+      <img src={imgProduct} alt="imagen producto" className="img--product" />
       <div className="container--titleYPrice">
-        <h2 className="name--product">grafica gtx 1060 12gbRam 521cache zotac</h2>
-        <span className="price--product">$123134</span>
+        <h2 className="name--product">
+          {`GeForce RTX ${serie} Series ${modelo}${
+            isTi ? "TI" : ""
+          } ${marca} ${tamañoDeMemoria} ${tipoDeMemoriaGrafica}`}
+        </h2>
+        <span className="price--product">${price}</span>
       </div>
     </div>
   );
