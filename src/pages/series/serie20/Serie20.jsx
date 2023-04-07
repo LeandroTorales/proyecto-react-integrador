@@ -1,22 +1,22 @@
 import React from "react";
-import WrapperGeneracion from "../../../components/generationPageComponents/WrapperGeneracion";
-import CardProductGrafica from "../../../components/generationPageComponents/CardProductGrafica";
-import WrapperProducts from "../../../components/generationPageComponents/WrapperProducts";
-import WrapperAsideProducts from "../../../components/generationPageComponents/WrapperAsideProducts";
-import WrapperContainerProducts from "../../../components/generationPageComponents/WrapperContainerProducts";
+import WrapperSerie from "../../../components/seriePageComponents/WrapperSerie";
+import CardProductGrafica from "../../../components/seriePageComponents/CardProductGrafica";
+import WrapperProducts from "../../../components/seriePageComponents/WrapperProducts";
+import WrapperAsideProducts from "../../../components/seriePageComponents/WrapperAsideProducts";
+import WrapperContainerProducts from "../../../components/seriePageComponents/WrapperContainerProducts";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFiltersAside } from "../../../redux/slices/toggleFiltersAsideProductsSlice";
 
-const Generacion2000 = () => {
+const Serie20 = () => {
   const dispatch = useDispatch();
 
   const { openFiltersAside } = useSelector((state) => state.toggleFiltersAsideProductsSlice);
 
   return (
     <>
-      <WrapperGeneracion>
+      <WrapperSerie>
         <WrapperProducts>
           <WrapperAsideProducts></WrapperAsideProducts>
           <WrapperContainerProducts>
@@ -34,9 +34,9 @@ const Generacion2000 = () => {
             <CardProductGrafica></CardProductGrafica>
           </WrapperContainerProducts>
         </WrapperProducts>
-      </WrapperGeneracion>
+      </WrapperSerie>
     </>
   );
 };
 
-export default Generacion2000;
+export default Serie20;

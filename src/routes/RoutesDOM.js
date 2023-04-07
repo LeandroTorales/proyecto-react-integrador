@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "../pages/homePage/HomePage";
-import Generacion2000 from "../pages/generaciones/generacion2000/Generacion2000";
-import Generacion3000 from "../pages/generaciones/generacion3000/Generacion3000";
-import Generacion4000 from "../pages/generaciones/generacion4000/Generacion4000";
 import AcercaDe from "../pages/acercaDe/AcercaDe";
-import SectionGeneraciones from "../components/sectionGeneraciones/SectionGeneraciones";
+import SectionSeries from "../components/sectionSeries/SectionSeries";
 import { scrollToTop } from "../utils/scrollToTop";
+import Serie20 from "../pages/series/serie20/Serie20";
+import Serie30 from "../pages/series/serie30/Serie30";
+import Serie40 from "../pages/series/serie40/Serie40";
 
 const RoutesDOM = () => {
   const { pathname } = useLocation();
@@ -17,10 +17,10 @@ const RoutesDOM = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/generacion2000" element={<Generacion2000 />} />
-      <Route path="/generacion3000" element={<Generacion3000 />} />
-      <Route path="/generacion4000" element={<Generacion4000 />} />
-      <Route path="/generaciones" element={<SectionGeneraciones />} />
+      <Route path="/serie20" element={<Serie20 />} />
+      <Route path="/serie30" element={<Serie30 />} />
+      <Route path="/serie40" element={<Serie40 />} />
+      <Route path="/series" element={<SectionSeries />} />
       <Route path="/acercaDe" element={<AcercaDe />} />
     </Routes>
   );

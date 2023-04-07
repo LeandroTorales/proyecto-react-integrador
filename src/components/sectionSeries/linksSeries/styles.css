@@ -1,8 +1,8 @@
-.button--generacion {
+.button--serie {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 190px;
+    width: 250px;
     padding: 25px;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -21,19 +21,19 @@
     background-color: white;
 }
 
-.button--generacion:hover {
+.button--serie:hover {
     scale: calc(1.05);
 }
 
-.button--generacion:visited {
+.button--serie:visited {
     color: black;
 }
 
-.button--generacion:any-link {
+.button--serie:any-link {
     color: black;
 }
 
-.button--generacion:active {
+.button--serie:active {
     background-color: #474747;
     border: 5px solid white;
     border-style: outset;
