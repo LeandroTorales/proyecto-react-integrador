@@ -7,6 +7,7 @@ import { scrollToTop } from "../utils/scrollToTop";
 import Serie20 from "../pages/series/serie20/Serie20";
 import Serie30 from "../pages/series/serie30/Serie30";
 import Serie40 from "../pages/series/serie40/Serie40";
+import Cart from "../pages/cart/Cart";
 
 const RoutesDOM = () => {
   const { pathname } = useLocation();
@@ -17,10 +18,11 @@ const RoutesDOM = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/series" element={<SectionSeries />} />
       <Route path="/serie20" element={<Serie20 />} />
       <Route path="/serie30" element={<Serie30 />} />
       <Route path="/serie40" element={<Serie40 />} />
-      <Route path="/series" element={<SectionSeries />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/acercaDe" element={<AcercaDe />} />
     </Routes>
   );

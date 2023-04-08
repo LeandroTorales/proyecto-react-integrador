@@ -6,8 +6,8 @@ const IconCart = () => {
   return (
     <>
       <div className="icon linkOfNavbar">
-        <button className="icon ">
-          <AiOutlineShoppingCart />
+        <button className="icon linkOfNavbar">
+          <AiOutlineShoppingCart className="linkOfNavbar" />
         </button>
       </div>
     </>

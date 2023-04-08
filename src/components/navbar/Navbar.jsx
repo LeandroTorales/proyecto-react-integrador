@@ -16,7 +16,9 @@ const Navbar = () => {
           <LinkNavbarComponent nameLink={"Inicio"} to={"/"} />
           <LinkNavbarComponent nameLink={"Series"} to={"/series"} />
           <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
-          <IconCart />
+          <LinkNavbarComponent to={"/cart"}>
+            <IconCart />
+          </LinkNavbarComponent>
         </ContainerLinks>
         <BarsHamburguesaNavbar />
         <FondoOnBlur />
