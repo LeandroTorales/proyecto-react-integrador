@@ -4,7 +4,6 @@ import WrapperProducts from "../../../components/seriePageComponents/WrapperProd
 import WrapperAsideProducts from "../../../components/seriePageComponents/WrapperAsideProducts";
 import WrapperContainerProducts from "../../../components/seriePageComponents/WrapperContainerProducts";
 import CardProductGrafica from "../../../components/seriePageComponents/CardProductGrafica";
-import { products } from "../../../data/products";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { toggleFiltersAside } from "../../../redux/slices/toggleFiltersAsideProductsSlice";

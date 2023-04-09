@@ -3,6 +3,7 @@
     width: 50%;
     height: calc(100vh - 60px);
     position: absolute;
+    display: none;
     top: 60px;
     right: -9000px;
     z-index: 1;
@@ -16,4 +17,11 @@
 
 .activeBlur {
     right: 0px;
+
+}
+
+@media (max-width:768px) {
+    .onBlur--fondo {
+        display: flex;
+    }
 }

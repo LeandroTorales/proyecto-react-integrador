@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./styles.css";
 import LinksSeries from "./linksSeries/LinksSeries";
 import { useLocation } from "react-router-dom";
@@ -8,7 +8,7 @@ const SectionSeries = () => {
   const { pathname } = useLocation();
 
   const ternarioLocation = () => {
-    if (pathname != "/series") return false;
+    if (pathname !== "/series") return false;
     return true;
   };
 

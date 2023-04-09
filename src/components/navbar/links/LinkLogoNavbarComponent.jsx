@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const LinkLogoNavbarComponent = ({ nameLink, to }) => {
-
   return (
     <NavLink className="logo--navbar linkOfNavbar" to={`${to}`}>
       {nameLink}
