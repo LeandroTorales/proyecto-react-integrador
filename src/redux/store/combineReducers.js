@@ -4,11 +4,11 @@ import toggleFiltersAsideProductsSlice from "../slices/toggleFiltersAsideProduct
 import seriesSlice from "../slices/seriesSlice";
 import productsSlice from "../slices/productsSlice";
 
-const reducer = combineReducers({
+const reducers = combineReducers({
   toggleMenuSlice: toggleMenuSlice,
   toggleFiltersAsideProductsSlice: toggleFiltersAsideProductsSlice,
   seriesSlice: seriesSlice,
   productsSlice: productsSlice,
 });
 
-export default reducer;
+export default reducers;

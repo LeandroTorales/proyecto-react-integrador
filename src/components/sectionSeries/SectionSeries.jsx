@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./styles.css";
 import LinksSeries from "./linksSeries/LinksSeries";
-import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const SectionSeries = () => {
   const { pathname } = useLocation();
