@@ -13,6 +13,8 @@ const Serie40 = () => {
   const dispatch = useDispatch();
 
   const { openFiltersAside } = useSelector((state) => state.toggleFiltersAsideProductsSlice);
+  const { products } = useSelector((state) => state.productsSlice);
+  const productsFilter = products.filter((prod) => prod.serie === 40);
 
   return (
     <WrapperSerie>
@@ -23,38 +25,36 @@ const Serie40 = () => {
             className={`icon--filter__forResponsive ${openFiltersAside ? "activeAsideButton" : ""}`}
             onClick={() => dispatch(toggleFiltersAside())}
           />
-          {products
-            .filter((prod) => prod.serie === 40)
-            .map(
-              ({
-                id,
-                serie,
-                modelo,
-                fabricante,
-                marca,
-                isTi,
-                stock,
-                price,
-                tamañoDeMemoria,
-                tipoDeMemoriaGrafica,
-                imgProduct,
-              }) => (
-                <CardProductGrafica
-                  id={id}
-                  serie={serie}
-                  modelo={modelo}
-                  fabricante={fabricante}
-                  marca={marca}
-                  isTi={isTi}
-                  stock={stock}
-                  price={price}
-                  tamañoDeMemoria={tamañoDeMemoria}
-                  tipoDeMemoriaGrafica={tipoDeMemoriaGrafica}
-                  imgProduct={imgProduct}
-                  key={id}
-                />
-              )
-            )}
+          {productsFilter.map(
+            ({
+              id,
+              serie,
+              modelo,
+              fabricante,
+              marca,
+              isTi,
+              stock,
+              price,
+              tamañoDeMemoria,
+              tipoDeMemoriaGrafica,
+              imgProduct,
+            }) => (
+              <CardProductGrafica
+                id={id}
+                serie={serie}
+                modelo={modelo}
+                fabricante={fabricante}
+                marca={marca}
+                isTi={isTi}
+                stock={stock}
+                price={price}
+                tamañoDeMemoria={tamañoDeMemoria}
+                tipoDeMemoriaGrafica={tipoDeMemoriaGrafica}
+                imgProduct={imgProduct}
+                key={id}
+              />
+            )
+          )}
         </WrapperContainerProducts>
       </WrapperProducts>
     </WrapperSerie>

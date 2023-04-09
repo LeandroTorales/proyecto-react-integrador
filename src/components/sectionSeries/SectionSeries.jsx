@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 import LinksSeries from "./linksSeries/LinksSeries";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const SectionSeries = () => {
   const { pathname } = useLocation();
@@ -11,6 +12,8 @@ const SectionSeries = () => {
     return true;
   };
 
+  const { series } = useSelector((state) => state.seriesSlice);
+
   return (
     <>
       <div
@@ -19,9 +22,11 @@ const SectionSeries = () => {
       >
         <h2 className="title--Series">Estas son nuestras series de tarjetas gráficas:</h2>
         <div className="wrapper--Series">
-          <LinksSeries toProp={"/serie20"}>Geforce RTX 20 series</LinksSeries>
-          <LinksSeries toProp={"/serie30"}>Geforce RTX 30 series</LinksSeries>
-          <LinksSeries toProp={"/serie40"}>Geforce RTX 40 series</LinksSeries>
+          {series.map(({ id, nameOfComponent, linkToProp }) => (
+            <LinksSeries key={id} toProp={linkToProp}>
+              {nameOfComponent}
+            </LinksSeries>
+          ))}
         </div>
       </div>
     </>

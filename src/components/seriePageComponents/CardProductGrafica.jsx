@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import ButtonComprar from "./ButtonComprar";
 
 const CardProductGrafica = ({
   id,
@@ -25,6 +26,7 @@ const CardProductGrafica = ({
         </h2>
         <span className="price--product">${price}</span>
       </div>
+      <ButtonComprar />
     </div>
   );
 };
