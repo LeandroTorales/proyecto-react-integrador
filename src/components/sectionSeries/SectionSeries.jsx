@@ -22,8 +22,8 @@ const SectionSeries = () => {
       >
         <h2 className="title--Series">Estas son nuestras series de tarjetas gráficas:</h2>
         <div className="wrapper--Series">
-          {series.map(({ id, nameOfComponent, linkToProp }) => (
-            <LinksSeries key={id} toProp={linkToProp}>
+          {series.map(({ id, nameOfComponent, linkToProp, serie }) => (
+            <LinksSeries key={id} toProp={linkToProp} serie={serie}>
               {nameOfComponent}
             </LinksSeries>
           ))}

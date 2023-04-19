@@ -1,20 +1,29 @@
 import React from "react";
-import WrapperSerie from "../../../components/seriePageComponents/WrapperSerie";
-import CardProductGrafica from "../../../components/seriePageComponents/CardProductGrafica";
-import WrapperProducts from "../../../components/seriePageComponents/WrapperProducts";
-import WrapperAsideProducts from "../../../components/seriePageComponents/WrapperAsideProducts";
-import WrapperContainerProducts from "../../../components/seriePageComponents/WrapperContainerProducts";
+import WrapperSerie from "../../components/seriePageComponents/WrapperSerie";
+import CardProductGrafica from "../../components/seriePageComponents/CardProductGrafica";
+import WrapperProducts from "../../components/seriePageComponents/WrapperProducts";
+import WrapperAsideProducts from "../../components/seriePageComponents/WrapperAsideProducts";
+import WrapperContainerProducts from "../../components/seriePageComponents/WrapperContainerProducts";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleFiltersAside } from "../../../redux/slices/toggleFiltersAsideProductsSlice";
+import { toggleFiltersAside } from "../../redux/slices/toggleFiltersAsideProductsSlice";
+import { useParams } from "react-router-dom";
 
-const Serie20 = () => {
+const Serie = () => {
   const dispatch = useDispatch();
+
+  const { serieParam } = useParams();
+
+  const findNumberOfSerie = () => {
+    const find = series.find((obj) => obj.linkToProp === serieParam);
+    return find.serie;
+  };
 
   const { openFiltersAside } = useSelector((state) => state.toggleFiltersAsideProductsSlice);
   const { products } = useSelector((state) => state.productsSlice);
-  const productsFilter = products.filter((prod) => prod.serie === 20);
+  const { series } = useSelector((state) => state.seriesSlice);
+  const productsFilter = products.filter((prod) => prod.serie === findNumberOfSerie());
 
   return (
     <>
@@ -66,4 +75,4 @@ const Serie20 = () => {
   );
 };
 
-export default Serie20;
+export default Serie;

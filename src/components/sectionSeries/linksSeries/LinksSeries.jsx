@@ -1,10 +1,16 @@
 import React from "react";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const LinksSeries = ({ children, toProp }) => {
+const LinksSeries = ({ children, toProp, serie }) => {
+  const { pathname } = useLocation();
+
   return (
-    <Link to={`${toProp}`} className="button--serie">
+    <Link
+      to={`${pathname !== "/series" ? "/series/" : ""}${toProp}`}
+      serie={serie}
+      className="button--serie"
+    >
       {children}
     </Link>
   );
