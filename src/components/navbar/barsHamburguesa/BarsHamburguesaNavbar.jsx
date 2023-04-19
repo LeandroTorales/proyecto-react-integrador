@@ -1,7 +1,7 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleMenu } from "../../../redux/slices/toggleMenuSlice";
 
 const BarsHamburguesaNavbar = () => {
@@ -9,8 +9,8 @@ const BarsHamburguesaNavbar = () => {
 
   return (
     <>
-      <div className="icon icon--hamburguesa" onClick={() => dispatch(toggleMenu())}>
-        <FaBars />
+      <div className="icon icon--hamburguesa linkOfNavbar" onClick={() => dispatch(toggleMenu())}>
+        <FaBars className="linkOfNavbar" />
       </div>
     </>
   );

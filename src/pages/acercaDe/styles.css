@@ -1,0 +1,78 @@
+.wrapper--acercaDe {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container--acercaDe {
+    height: 90%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #111111;
+    border: 2px white solid;
+}
+
+.container--text__aboutMe {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 25px 75px;
+    gap: 20px px;
+}
+
+.container--Redes__contacto {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bubble {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bubble svg {
+    height: 70%;
+    width: 70%;
+}
+
+.container--text__aboutMe h2 {
+    font-size: clamp(15px, 8vw, 50px);
+}
+
+.container--text__aboutMe p {
+    font-size: clamp(15px, 6vw, 40px);
+}
+
+@media (max-width: 768px) {
+    .container--text__aboutMe {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,123 @@
+.wrapper--generación {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    color: black;
+}
+
+.wrapper--cardProductGrafica {
+    width: 100%;
+    background: white;
+    height: 200px;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0px 20px;
+}
+
+.wrapper--products {
+    background-color: white;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper--asideProducts {
+    width: 20%;
+    background-color: rgb(255, 0, 0);
+    height: 100%;
+}
+
+.wrapper--containerCardProducts {
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.img--product {
+    width: 240px;
+    height: 95%;
+    object-fit: contain;
+}
+
+.container--titleYPrice {
+    gap: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.name--product {
+    font-size: clamp(17px, 3vw, 27px);
+    font-weight: 400;
+}
+
+.name--product::first-letter {
+    text-transform: uppercase;
+}
+
+.price--product {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+
+
+.button--comprarProducto {
+    padding: 10px;
+    border-radius: 10px;
+    background: #9effbf;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 3px solid white;
+    transition: all .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+    cursor: pointer;
+}
+
+.button--comprarProducto:hover {
+    border: 3px solid black;
+    background: #91ff92;
+    font-weight: 500;
+}
+
+@media (max-width:768px) {
+    .wrapper--asideProducts {
+        width: 100%;
+        position: fixed;
+        display: flex;
+        height: calc(100vh - 60px);
+        left: -9000px;
+    }
+
+    .activeAsideProducts {
+        left: 0px;
+    }
+
+    .wrapper--containerCardProducts {
+        width: 100%;
+    }
+
+    .wrapper--cardProductGrafica {
+        flex-direction: column;
+        height: 600px;
+        justify-content: center;
+
+    }
+
+    .img--product {
+        height: 50%;
+    }
+}

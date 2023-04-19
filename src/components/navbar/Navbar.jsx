@@ -11,15 +11,17 @@ const Navbar = () => {
   return (
     <>
       <ContainerNavbar>
-        <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"https://twitter.com"} />
+        <LinkLogoNavbarComponent nameLink={"GraphicsHeaven"} to={"/"} />
         <ContainerLinks>
-          <LinkNavbarComponent nameLink={"Inicio"} to={"https://twitter.com"} />
-          <LinkNavbarComponent nameLink={"Marcas"} to={"https://google.com"} />
-          <LinkNavbarComponent nameLink={"Acerca de"} to={"https://twitter.com"} />
-          <IconCart />
+          <LinkNavbarComponent nameLink={"Inicio"} to={"/"} />
+          <LinkNavbarComponent nameLink={"Series"} to={"/series"} />
+          <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
+          <LinkNavbarComponent to={"/cart"}>
+            <IconCart />
+          </LinkNavbarComponent>
         </ContainerLinks>
         <BarsHamburguesaNavbar />
-        <FondoOnBlur/>
+        <FondoOnBlur />
       </ContainerNavbar>
     </>
   );

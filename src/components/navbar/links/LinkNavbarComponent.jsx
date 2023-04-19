@@ -1,11 +1,13 @@
 import React from "react";
 import "./styles.css";
+import { NavLink } from "react-router-dom";
 
-const LinkNavbarComponent = ({ nameLink, to }) => {
+const LinkNavbarComponent = ({ nameLink, to, children }) => {
   return (
-    <a className="links--navbar" href={to}>
+    <NavLink className="links--navbar linkOfNavbar" to={`${to}`}>
       {nameLink}
-    </a>
+      {children}
+    </NavLink>
   );
 };
 

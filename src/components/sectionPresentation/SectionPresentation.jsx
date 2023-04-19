@@ -2,7 +2,7 @@ import React from "react";
 import BackgroundImagePresentation from "./backgroundImage/BackgroundImagePresentation";
 import BlurImageBackGround from "./subComponents/BlurImageBackGround";
 import "./styles.css";
-import TextMainHomePage from "../subComponentsHomePage/TextMainHomePage";
+import TextMainHomePage from "../../pages/homePage/subComponentsHomePage/TextMainHomePage";
 import SliderPresentationUl from "./slider/SliderPresentationUl";
 
 const SectionPresentation = () => {
@@ -63,8 +63,7 @@ const SectionPresentation = () => {
             </div>
 
             <TextMainHomePage>
-              {" "}
-              Consigue la tarjeta de video de tus sueños, con nosotros.{" "}
+              Consigue la tarjeta de video de tus sueños, con nosotros.
             </TextMainHomePage>
           </BlurImageBackGround>
         </BackgroundImagePresentation>

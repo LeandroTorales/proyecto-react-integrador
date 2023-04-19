@@ -5,9 +5,9 @@ import "./styles.css";
 const IconCart = () => {
   return (
     <>
-      <div className="icon">
-        <button className="icon" /* onClick={dispatch(openMenu())} */>
-          <AiOutlineShoppingCart />
+      <div className="icon linkOfNavbar">
+        <button className="icon linkOfNavbar">
+          <AiOutlineShoppingCart className="linkOfNavbar" />
         </button>
       </div>
     </>

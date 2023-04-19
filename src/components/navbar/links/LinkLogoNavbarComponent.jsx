@@ -1,11 +1,12 @@
 import React from "react";
 import "./styles.css";
+import { NavLink } from "react-router-dom";
 
 const LinkLogoNavbarComponent = ({ nameLink, to }) => {
   return (
-    <a className="logo--navbar" href={to}>
+    <NavLink className="logo--navbar linkOfNavbar" to={`${to}`}>
       {nameLink}
-    </a>
+    </NavLink>
   );
 };
 
