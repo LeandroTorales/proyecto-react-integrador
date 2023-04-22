@@ -1,0 +1,57 @@
+.form--container {
+    height: 75%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    color: black;
+    gap: 5px;
+    border-radius: 25px;
+}
+
+.formfields--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.button--submit {
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 5px 55px;
+    background: #88c2ff;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    cursor: pointer;
+}
+
+.button--submit:hover {
+    background: #a1a1a1;
+}
+
+.lineDivisory {
+    height: 1px;
+    width: 100%;
+    background-color: #a1a1a1;
+}
+
+@media (max-width:768px) {
+    .form--container {
+        height: 95%;
+        width: 95%;
+    }
+
+    .formfields--container {
+        gap: 10px;
+    }
+}

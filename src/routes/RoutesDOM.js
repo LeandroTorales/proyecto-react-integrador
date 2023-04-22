@@ -5,7 +5,8 @@ import AcercaDe from "../pages/acercaDe/AcercaDe";
 import SectionSeries from "../components/sectionSeries/SectionSeries";
 import { scrollToTop } from "../utils/scrollToTop";
 import Cart from "../pages/cart/Cart";
-import Serie from "../pages/series/Serie";
+import Serie from "../pages/serie/Serie";
+import LoginRegisterPage from "../pages/loginRegister/LoginRegisterPage";
 
 const RoutesDOM = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const RoutesDOM = () => {
       <Route path="/series/:serieParam" element={<Serie />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/acercaDe" element={<AcercaDe />} />
+      <Route path="/loginRegister" element={<LoginRegisterPage />} />
     </Routes>
   );
 };

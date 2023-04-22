@@ -1,0 +1,28 @@
+.container--Title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 100%;
+}
+
+h2 {
+    font-size: clamp(13px, 6vw, 2rem);
+    font-weight: 600;
+
+}
+
+.wrapper--formField {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (max-width:768px) {
+    .wrapper--formField {
+        gap: 10px;
+    }
+}
