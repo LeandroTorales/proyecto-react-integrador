@@ -8,7 +8,7 @@ const initialState = {
 const productsSlice = createSlice({
   name: "productsSlice",
   initialState: initialState,
-  reducer: {
+  reducers: {
     getProducts: (state) => {
       return state;
     },

@@ -1,0 +1,15 @@
+.button--toggleForm {
+    font-size: clamp(8px, 7vw, 17px);
+    text-align: center;
+    background: transparent;
+    border: none;
+    font-weight: 400;
+    color: rgb(0, 0, 255);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.button--toggleForm:active {
+    color: black;
+}

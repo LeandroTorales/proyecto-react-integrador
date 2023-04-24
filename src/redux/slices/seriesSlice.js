@@ -8,7 +8,7 @@ const initialState = {
 export const seriesSlice = createSlice({
   name: "series",
   initialState: initialState,
-  reducer: {
+  reducers: {
     getSeries: (state) => {
       return state;
     },

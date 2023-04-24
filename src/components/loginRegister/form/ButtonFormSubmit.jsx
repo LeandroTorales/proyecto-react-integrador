@@ -1,10 +1,13 @@
 import React from "react";
 import "./styles.css";
+import { useSelector } from "react-redux";
 
 const ButtonFormSubmit = () => {
+  const { toggleForm } = useSelector((state) => state.toggleFormLoginRegisterSlice);
+
   return (
     <button type="submit" className="button--submit">
-      Enviar
+      {toggleForm ? "Iniciar sesión" : "Registrarse"}
     </button>
   );
 };

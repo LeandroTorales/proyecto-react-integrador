@@ -4,6 +4,7 @@ import toggleFiltersAsideProductsSlice from "../slices/toggleFiltersAsideProduct
 import seriesSlice from "../slices/seriesSlice";
 import productsSlice from "../slices/productsSlice";
 import registerSlice from "../slices/registerSlice";
+import toggleFormLoginRegisterSlice from "../slices/toggleFormLoginRegisterSlice";
 
 const reducers = combineReducers({
   toggleMenuSlice: toggleMenuSlice,
@@ -11,6 +12,7 @@ const reducers = combineReducers({
   seriesSlice: seriesSlice,
   productsSlice: productsSlice,
   registerSlice: registerSlice,
+  toggleFormLoginRegisterSlice: toggleFormLoginRegisterSlice,
 });
 
 export default reducers;

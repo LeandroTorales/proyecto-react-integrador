@@ -10,8 +10,7 @@ import { useSelector } from "react-redux";
 import ButtonLogout from "../buttonLogout/ButtonLogout";
 
 const Navbar = () => {
-  const { dataUser } = useSelector((state) => state.registerSlice);
-  console.log("f:", dataUser);
+  const { isLogin } = useSelector((state) => state.registerSlice);
 
   return (
     <>
@@ -20,15 +19,12 @@ const Navbar = () => {
         <ContainerLinks>
           <LinkNavbarComponent nameLink={"Inicio"} to={"/"} />
           <LinkNavbarComponent nameLink={"Series"} to={"/series"} />
-          {dataUser !== null ? (
+          <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
+          {isLogin === true ? (
             <ButtonLogout />
           ) : (
-            <LinkNavbarComponent
-              nameLink={`${dataUser !== null ? "Cerrar Sesión" : "Login/Register"}`}
-              to={"/loginRegister"}
-            />
+            <LinkNavbarComponent nameLink={"Login/Register"} to={"/loginRegister"} />
           )}
-          <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
           <LinkNavbarComponent to={"/cart"}>
             <IconCart />
           </LinkNavbarComponent>
