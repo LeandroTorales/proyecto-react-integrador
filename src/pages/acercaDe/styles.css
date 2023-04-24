@@ -68,7 +68,7 @@
 }
 
 .container--text__aboutMe p {
-    font-size: clamp(15px, 6vw, 40px);
+    font-size: clamp(13px, 5vw, 35px);
 }
 
 @media (max-width: 768px) {
