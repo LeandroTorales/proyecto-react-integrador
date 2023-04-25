@@ -25,6 +25,9 @@ const Serie = () => {
   const { series } = useSelector((state) => state.seriesSlice);
   const productsFilter = products.filter((prod) => prod.serie === findNumberOfSerie());
 
+  const { productsInCartArr } = useSelector((state) => state.cartSlice);
+  console.log("ARRAY DE PRODUCTOS:", productsInCartArr);
+
   return (
     <>
       <WrapperSerie>
