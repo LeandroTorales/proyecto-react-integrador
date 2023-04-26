@@ -15,6 +15,26 @@ export const addProductCart = (productsArr, product) => {
   return [...productsArr, { ...product, quantity: 1 }];
 };
 
+export const modificateQuantityProductInCart = (
+  productsArr,
+  actionPayloadWithProductAndValueSelect
+) => {
+  const findProductInArrCart = productsArr.find(
+    (prod) => prod.id === actionPayloadWithProductAndValueSelect.payload1.id
+  );
+
+  if (findProductInArrCart) {
+    return productsArr.map((prod) => {
+      return prod.id === findProductInArrCart.id
+        ? {
+            ...prod,
+            quantity: actionPayloadWithProductAndValueSelect.payload2,
+          }
+        : prod;
+    });
+  }
+};
+
 export const removeProductCart = (productsArr, product) => {
   const findProductInArrCart = productsArr.find((prod) => prod.id === product.id);
 

@@ -1,0 +1,96 @@
+.container--imgProduct {
+    height: 200px;
+    width: 170px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.imgProduct {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.wrapper--detailProductCartCard {
+    gap: 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.cart--itemsIn>:nth-child(2) {
+    border-top: 1px solid black;
+}
+
+p {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.detail--product__cartCard {
+    font-weight: 400;
+    color: #868686;
+}
+
+.wrapper--nameCategorie {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+
+.wrapper--nameCategorie>span:first-of-type {
+    width: 60%;
+}
+
+.name--categorie {
+    font-weight: 500;
+    color: #8f8f8f;
+    width: 20%;
+    text-align: center;
+}
+
+.wrapper--select {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper--select>select {
+    padding: 3px 18px;
+    font-size: 1.1rem;
+    border-radius: 7px;
+}
+
+.wrapper--priceCartCard {
+    width: 20%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.wrapper--priceCartCard>span:first-child {
+    font-weight: 600;
+}
+
+.wrapper--priceCartCard>span:last-child {
+    font-weight: 300;
+    color: #868686;
+}
+
+.wrapper--deleteProduct {
+    position: relative;
+    top: -65px;
+    right: 15px;
+    width: 0px;
+    font-size: 1.4rem;
+    color: rgb(255, 41, 41);
+    cursor: pointer;
+}
