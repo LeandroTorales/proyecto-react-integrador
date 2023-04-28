@@ -1,0 +1,30 @@
+.wrapper--cartCardProduct {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    padding: 5px 15px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4b4b4b;
+}
+
+.wrapper--detailProduct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 60%;
+}
+
+@media (max-width:768px) {
+    .wrapper--detailProduct {
+
+        width: 100%;
+    }
+
+    .wrapper--cartCardProduct {
+        height: 500px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import ButtonComprar from "./ButtonComprar";
+import ButtonComprar from "./ButtonComprarProduct";
 
 const CardProductGrafica = ({
   id,
@@ -26,7 +26,19 @@ const CardProductGrafica = ({
         </h2>
         <span className="price--product">${price}</span>
       </div>
-      <ButtonComprar />
+      <ButtonComprar
+        id={id}
+        serie={serie}
+        modelo={modelo}
+        fabricante={fabricante}
+        marca={marca}
+        isTi={isTi}
+        stock={stock}
+        price={price}
+        tamañoDeMemoria={tamañoDeMemoria}
+        tipoDeMemoriaGrafica={tipoDeMemoriaGrafica}
+        imgProduct={imgProduct}
+      />
     </div>
   );
 };

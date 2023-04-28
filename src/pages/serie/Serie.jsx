@@ -25,6 +25,7 @@ const Serie = () => {
   const { series } = useSelector((state) => state.seriesSlice);
   const productsFilter = products.filter((prod) => prod.serie === findNumberOfSerie());
 
+
   return (
     <>
       <WrapperSerie>
