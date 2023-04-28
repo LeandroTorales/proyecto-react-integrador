@@ -44,7 +44,7 @@
 .cart--resume__container {
     height: 100%;
     width: 30%;
-    background: rgb(113, 83, 83);
+    background: rgb(255, 255, 255);
     border-radius: 25px;
     border-radius: 0px 25px 25px 0px;
     -webkit-border-radius: 0px 25px 25px 0px;
@@ -55,7 +55,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-left: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    gap: 20px;
 }
+
+
 
 @media (max-width:768px) {
     .cart--info__container {

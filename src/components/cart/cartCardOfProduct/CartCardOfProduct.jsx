@@ -7,7 +7,6 @@ import PriceProductCartCard from "./components/PriceProductCartCard";
 import RemoveProductCart from "./components/RemoveProductCart";
 
 const CartCardOfProduct = ({ ...prod }) => {
-
   return (
     <div className="wrapper--cartCardProduct">
       <div className="wrapper--detailProduct">

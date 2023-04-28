@@ -10,9 +10,21 @@
 
 .wrapper--detailProduct {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 5px;
     width: 60%;
+}
+
+@media (max-width:768px) {
+    .wrapper--detailProduct {
+
+        width: 100%;
+    }
+
+    .wrapper--cartCardProduct {
+        height: 500px;
+        flex-direction: column;
+        gap: 20px;
+    }
 }
