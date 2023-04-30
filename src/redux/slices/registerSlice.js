@@ -26,7 +26,7 @@ const registerSlice = createSlice({
       return { ...state, isLogin: !state.isLogin };
     },
   },
-});
+}); 
 
 export const {
   setDataUserRegisterFormAction,

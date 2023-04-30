@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import * as Yup from "yup";
 import { useFormik } from "formik";
 import { isLoginToggleAction, setDataUserOnLogin } from "../../../redux/slices/registerSlice";
 import FormBox from "../form/FormBox";
@@ -12,6 +11,8 @@ import ButtonFormSubmit from "../form/ButtonFormSubmit";
 import LineDivisoryForm from "../form/LineDivisoryForm";
 import WrapperLoginFormToggle from "../wrapperLoginFormToggle/WrapperLoginFormToggle";
 import ButtonToggleForm from "../buttonToggleForm/ButtonToggleForm";
+import { loginInitialValues } from "../../../redux/slices/formik/initialValues";
+import { loginValidationShema } from "../../../redux/slices/formik/validationsSchemas";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -19,17 +20,9 @@ const LoginForm = () => {
 
   const { dataAllUsersArr } = useSelector((state) => state.registerSlice);
 
-  const validationSchema = Yup.object({
-    email: Yup.string().email("Email incorrecto.").required("Email requerido."),
-    password: Yup.string().required("Contraseña requerida."),
-  });
-
   const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: validationSchema,
+    initialValues: loginInitialValues,
+    validationSchema: loginValidationShema,
     onSubmit: (values) => {
       console.log("values:", values);
       const findUserInArr = () => {

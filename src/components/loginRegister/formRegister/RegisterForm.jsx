@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import * as Yup from "yup";
 import LineDivisoryForm from "../form/LineDivisoryForm";
 import ButtonToggleForm from "../buttonToggleForm/ButtonToggleForm";
 import InputComponent from "../input/InputComponent";
@@ -16,40 +15,21 @@ import {
 } from "../../../redux/slices/registerSlice";
 import ButtonFormSubmit from "../form/ButtonFormSubmit";
 import WrapperLoginFormToggle from "../wrapperLoginFormToggle/WrapperLoginFormToggle";
+import { registerInitialValues } from "../../../redux/slices/formik/initialValues";
+import { registerValidationShema } from "../../../redux/slices/formik/validationsSchemas";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const validationSchema = Yup.object({
-    name: Yup.string()
-      .min(2, "Nombre muy corto.")
-      .max(50, "Nombre muy largo.")
-      .required("Nombre requerido."),
-    surname: Yup.string()
-      .min(2, "Nombre muy corto.")
-      .max(50, "Nombre muy largo.")
-      .required("Apellido requerido."),
-    email: Yup.string().email("Email incorrecto.").required("Email requerido."),
-    cellphone: Yup.number("Tiene que ser numeros.")
-      .integer("Solo se aceptan numeros enteros.")
-      .required("El numero de telefono es obligatorio."),
-    password: Yup.string().required("Contraseña requerida."),
-  });
-
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      surname: "",
-      email: "",
-      cellphone: "",
-      password: "",
-    },
-    validationSchema: validationSchema,
+    initialValues: registerInitialValues,
+    validationSchema: registerValidationShema,
     onSubmit: (values) => {
       dispatch(setDataUserRegisterFormAction(values));
       dispatch(setDataAllUsersAction(values));
       dispatch(isLoginToggleAction());
+      console.log(values);
       alert("Te has registrado correctamente, muchas gracias.");
       setTimeout(() => {
         navigate("/");

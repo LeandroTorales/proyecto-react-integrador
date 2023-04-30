@@ -10,6 +10,7 @@
 h2 {
     font-size: clamp(13px, 6vw, 2rem);
     font-weight: 600;
+    text-align: center;
 
 }
 

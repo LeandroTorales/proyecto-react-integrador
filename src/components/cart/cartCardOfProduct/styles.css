@@ -14,11 +14,12 @@
     justify-content: center;
     gap: 5px;
     width: 60%;
+    user-select: none;
 }
 
 @media (max-width:768px) {
     .wrapper--detailProduct {
-
+        flex-direction: column;
         width: 100%;
     }
 

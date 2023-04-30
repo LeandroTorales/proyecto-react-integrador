@@ -140,10 +140,14 @@ p {
     background-color: #5eff2d;
 }
 
-.button--purchaseCart:disabled {
+.disabledButton {
     color: rgba(255, 255, 255, 0.468);
     background-color: rgb(79, 79, 79);
     cursor: not-allowed;
+}
+
+.disabledButton:active {
+    background-color: rgb(46, 46, 46);
 }
 
 @media (max-width: 768px) {

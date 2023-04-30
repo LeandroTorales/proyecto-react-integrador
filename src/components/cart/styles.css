@@ -86,5 +86,7 @@
         -moz-border-radius: 0px 0px 25px 25px;
         -ms-border-radius: 0px 0px 25px 25px;
         -o-border-radius: 0px 0px 25px 25px;
+        border-left: 0px;
+        border-top: 1px solid black;
     }
 }
