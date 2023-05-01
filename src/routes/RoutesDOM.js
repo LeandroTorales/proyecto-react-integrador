@@ -7,6 +7,7 @@ import { scrollToTop } from "../utils/scrollToTop";
 import Cart from "../pages/cart/Cart";
 import Serie from "../pages/serie/Serie";
 import LoginRegisterPage from "../pages/loginRegister/LoginRegisterPage";
+import ProfileUserPage from "../pages/profileUser/ProfileUserPage";
 
 const RoutesDOM = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const RoutesDOM = () => {
       <Route path="/series" element={<SectionSeries />} />
       <Route path="/series/:serieParam" element={<Serie />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/profileUser" element={<ProfileUserPage />} />
       <Route path="/acercaDe" element={<AcercaDe />} />
       <Route path="/loginRegister" element={<LoginRegisterPage />} />
     </Routes>

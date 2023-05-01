@@ -1,0 +1,10 @@
+.wrapper--profilePage {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}

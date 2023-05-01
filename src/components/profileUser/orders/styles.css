@@ -1,0 +1,40 @@
+.container--orders {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.wrapper--orders {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0px;
+}
+
+.orderInProfile {
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 500px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .orderInProfile {
+        height: 300px;
+        width: 95%;
+    }
+}

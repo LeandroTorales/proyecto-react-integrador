@@ -114,7 +114,8 @@ p {
     -webkit-text-fill-color: transparent;
 }
 
-.subtotal--cart {
+.subtotal--cart,
+.totalPrice--cart {
     font-size: 1.5rem;
 }
 

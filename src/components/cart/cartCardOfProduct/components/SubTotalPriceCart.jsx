@@ -11,9 +11,9 @@ const SubTotalPriceCart = () => {
 
   useEffect(() => {
     dispatch(getTotalPriceCartAction());
-  }, [productsInCartArr]);
+  }, [productsInCartArr, dispatch]);
 
-  return <p className="subtotal--cart">El subtotal de la compra es: ${priceOfCart}</p>;
+  return <p className="subtotal--cart">Subtotal: ${priceOfCart}</p>;
 };
 
 export default SubTotalPriceCart;

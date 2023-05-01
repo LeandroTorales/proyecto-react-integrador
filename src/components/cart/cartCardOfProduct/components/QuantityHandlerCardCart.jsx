@@ -1,10 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
-import {
-  getTotalPriceCartAction,
-  modificateQuantityProductInCartAction,
-} from "../../../../redux/slices/cart/cartSlice";
+import { modificateQuantityProductInCartAction } from "../../../../redux/slices/cart/cartSlice";
 
 const QuantityHandlerCardCart = ({ prod }) => {
   const dispatch = useDispatch();

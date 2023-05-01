@@ -10,13 +10,13 @@ import { useFormik } from "formik";
 import FormBox from "../form/FormBox";
 import {
   isLoginToggleAction,
-  setDataAllUsersAction,
   setDataUserRegisterFormAction,
 } from "../../../redux/slices/registerSlice";
 import ButtonFormSubmit from "../form/ButtonFormSubmit";
 import WrapperLoginFormToggle from "../wrapperLoginFormToggle/WrapperLoginFormToggle";
 import { registerInitialValues } from "../../../redux/slices/formik/initialValues";
 import { registerValidationShema } from "../../../redux/slices/formik/validationsSchemas";
+import { createUser } from "../../../axios/userAxios";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -25,15 +25,18 @@ const RegisterForm = () => {
   const formik = useFormik({
     initialValues: registerInitialValues,
     validationSchema: registerValidationShema,
-    onSubmit: (values) => {
-      dispatch(setDataUserRegisterFormAction(values));
-      dispatch(setDataAllUsersAction(values));
-      dispatch(isLoginToggleAction());
-      console.log(values);
-      alert("Te has registrado correctamente, muchas gracias.");
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
+    onSubmit: async (values, actions) => {
+      const { name, email, password, cellphone, surname } = values;
+      const user = await createUser(name, email, password);
+      if (user) {
+        dispatch(setDataUserRegisterFormAction({ ...user, surname, cellphone }));
+        dispatch(isLoginToggleAction());
+        alert("Te has registrado correctamente, muchas gracias.");
+        actions.resetForm();
+        return setTimeout(() => {
+          navigate("/");
+        }, 1500);
+      }
     },
   });
 

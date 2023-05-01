@@ -11,10 +11,11 @@ import ShippingCostCart from "../../components/cart/cartCardOfProduct/components
 import PurchaseCartButton from "../../components/cart/cartCardOfProduct/components/PurchaseCartButton";
 import SubTotalPriceCart from "../../components/cart/cartCardOfProduct/components/SubTotalPriceCart";
 import LineDivisoryFooter from "../../components/footer/subComponents/LineDivisoryFooter";
+import TotalPriceCart from "../../components/cart/cartCardOfProduct/components/TotalPriceCart";
 
 const Cart = () => {
   const { productsInCartArr } = useSelector((state) => state.cartSlice);
-  console.log("ARRAY DE PRODUCTOS:", productsInCartArr);
+  console.log("productsInCartArr:", productsInCartArr);
 
   return (
     <>
@@ -39,7 +40,8 @@ const Cart = () => {
           </CartItemsIn>
           <CartResumeContainer>
             <SubTotalPriceCart />
-            <ShippingCostCart />
+            {productsInCartArr.length === 0 ? "" : <ShippingCostCart />}
+            <TotalPriceCart/>
             <LineDivisoryFooter></LineDivisoryFooter>
             <PurchaseCartButton />
           </CartResumeContainer>

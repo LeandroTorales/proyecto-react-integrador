@@ -11,7 +11,7 @@ const ShippingCostCart = () => {
 
   useEffect(() => {
     dispatch(getShippingCostAction());
-  }, [productsInCartArr]);
+  }, [productsInCartArr, dispatch]);
 
   return (
     <div className="shippingCost">
