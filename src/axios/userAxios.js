@@ -8,7 +8,7 @@ export const createUser = async (nombre, email, password) => {
       email,
       password,
     });
-    return response.data.usuario;
+    return response.data;
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +20,7 @@ export const loginUser = async (email, password) => {
       email,
       password,
     });
-    return response.data.usuario;
+    return response.data;
   } catch (error) {
     console.log(error);
   }

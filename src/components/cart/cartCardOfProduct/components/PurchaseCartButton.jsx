@@ -1,33 +1,61 @@
 import React from "react";
 import "./styles.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createNewOrder } from "../../../../axios/axiosOrders";
+import { clearCartAction } from "../../../../redux/slices/cart/cartSlice";
+import { orderArrNewProps } from "./renamePropsArrApi/renamePropsArr";
+import { fetchOrdersStart } from "../../../../redux/slices/orders/ordersSlice";
 
 const PurchaseCartButton = () => {
   const { isLogin } = useSelector((state) => state.registerSlice);
   const { productsInCartArr } = useSelector((state) => state.cartSlice);
-  const navigate = useNavigate();
+  const { shippingCost } = useSelector((state) => state.cartSlice);
+  const { dataUser } = useSelector((state) => state.registerSlice);
+  const { loading } = useSelector((state) => state.ordersSlice);
 
-  const handleClickPurchaseCart = () => {
-    if (!isLogin && productsInCartArr.length === 0) return;
-    if (!isLogin) {
-      navigate("/loginRegister");
-      return alert(
-        "Parece que no estas logueado, te redirigiremos a la pagina de inicio de sesión."
-      );
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const ifDisabled = !isLogin || productsInCartArr.length === 0;
+
+  const handleClickPurchaseCart = async () => {
+    if (loading === true) return;
+    dispatch(fetchOrdersStart());
+    const orderData = {
+      price: productsInCartArr.reduce((acc, cur) => acc + cur.price * cur.quantity, 0),
+      shippingCost: shippingCost,
+      total:
+        productsInCartArr.reduce((acc, cur) => acc + cur.price * cur.quantity, 0) + shippingCost,
+      shippingDetails: {
+        name: dataUser.nombre,
+        cellphone: "1212121212",
+        location: "Buenos Aires",
+        address: "calle falsa 123",
+      },
+      items: orderArrNewProps(productsInCartArr),
+    };
+    try {
+      await createNewOrder(orderData, dispatch, dataUser);
+      if (createNewOrder) {
+        navigate("/");
+        return dispatch(clearCartAction());
+      }
+    } catch (error) {
+      console.log(error);
+      return alert(error);
     }
-    return alert("No puedes comprar si no tienes productos en el carrito.");
   };
 
   return (
     <>
-      {isLogin !== false && productsInCartArr.length !== 0 ? (
-        <button className="button--purchaseCart">Comprar carrito</button>
-      ) : (
-        <button className="button--purchaseCart disabledButton" onClick={handleClickPurchaseCart}>
-          Comprar carrito
-        </button>
-      )}
+      <button
+        className={`button--purchaseCart ${ifDisabled ? "disabledButton" : ""}`}
+        disabled={ifDisabled}
+        onClick={handleClickPurchaseCart}
+      >
+        Comprar carrito
+      </button>
     </>
   );
 };

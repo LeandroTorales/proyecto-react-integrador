@@ -15,7 +15,6 @@ import TotalPriceCart from "../../components/cart/cartCardOfProduct/components/T
 
 const Cart = () => {
   const { productsInCartArr } = useSelector((state) => state.cartSlice);
-  console.log("productsInCartArr:", productsInCartArr);
 
   return (
     <>
@@ -41,7 +40,7 @@ const Cart = () => {
           <CartResumeContainer>
             <SubTotalPriceCart />
             {productsInCartArr.length === 0 ? "" : <ShippingCostCart />}
-            <TotalPriceCart/>
+            <TotalPriceCart />
             <LineDivisoryFooter></LineDivisoryFooter>
             <PurchaseCartButton />
           </CartResumeContainer>

@@ -26,10 +26,10 @@ const RegisterForm = () => {
     initialValues: registerInitialValues,
     validationSchema: registerValidationShema,
     onSubmit: async (values, actions) => {
-      const { name, email, password, cellphone, surname } = values;
+      const { name, email, password } = values;
       const user = await createUser(name, email, password);
       if (user) {
-        dispatch(setDataUserRegisterFormAction({ ...user, surname, cellphone }));
+        dispatch(setDataUserRegisterFormAction({ ...user.usuario, token: user.token }));
         dispatch(isLoginToggleAction());
         alert("Te has registrado correctamente, muchas gracias.");
         actions.resetForm();

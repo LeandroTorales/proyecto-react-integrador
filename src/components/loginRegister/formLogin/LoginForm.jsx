@@ -24,12 +24,12 @@ const LoginForm = () => {
     validationSchema: loginValidationShema,
     onSubmit: async (values, actions) => {
       const { email, password } = values;
-      const userLogin = await loginUser(email, password);
+      const user = await loginUser(email, password);
 
-      if (userLogin) {
-        dispatch(setDataUserOnLogin({ ...userLogin }));
+      if (user) {
+        dispatch(setDataUserOnLogin({ ...user.usuario, token: user.token }));
         dispatch(isLoginToggleAction());
-        alert(`Has iniciado sesión correctamente, bienvenido devuelta, ${userLogin.nombre} :).`);
+        alert(`Has iniciado sesión correctamente, bienvenido devuelta, ${user.usuario.nombre} :).`);
         actions.resetForm();
         return setTimeout(() => {
           navigate("/");
