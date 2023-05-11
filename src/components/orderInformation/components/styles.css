@@ -1,0 +1,31 @@
+.information--order__division {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
+}
+
+.information--order__division>div>p {
+    font-weight: 300;
+    color: rgb(210, 210, 210);
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+.information--order__division>div>p>span {
+    font-weight: 500;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+.flexFix {
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    .information--order__division {
+        flex-direction: column;
+    }
+}

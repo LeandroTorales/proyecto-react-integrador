@@ -18,7 +18,7 @@ const ordersSlice = createSlice({
     fetchOrderSuccess: (state, action) => {
       return {
         ...state,
-        orders: [action.payload],
+        orders: action.payload,
         loading: false,
       };
     },

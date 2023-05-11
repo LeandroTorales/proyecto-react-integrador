@@ -8,6 +8,7 @@ import Cart from "../pages/cart/Cart";
 import Serie from "../pages/serie/Serie";
 import LoginRegisterPage from "../pages/loginRegister/LoginRegisterPage";
 import ProfileUserPage from "../pages/profileUser/ProfileUserPage";
+import OrderInformationPage from "../pages/order/OrderInformationPage";
 
 const RoutesDOM = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const RoutesDOM = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/series" element={<SectionSeries />} />
       <Route path="/series/:serieParam" element={<Serie />} />
+      <Route path="/orderInformation/:orderParam" element={<OrderInformationPage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/profileUser" element={<ProfileUserPage />} />
       <Route path="/acercaDe" element={<AcercaDe />} />
