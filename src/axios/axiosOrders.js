@@ -1,5 +1,5 @@
 import axios from "axios";
-import { fetchOrderSuccess } from "../redux/slices/orders/ordersSlice";
+import { fetchOrderSuccess, fetchOrdersFail } from "../redux/slices/orders/ordersSlice";
 import { urlBase } from "../utils/nucbaZappiBackendApi";
 
 export const ordersOfCurrentUser = async (dispatch, currentUser) => {
@@ -14,11 +14,14 @@ export const ordersOfCurrentUser = async (dispatch, currentUser) => {
     return response.data;
   } catch (error) {
     console.log(error);
+    dispatch(fetchOrdersFail());
     return alert(error);
   }
 };
 
 export const createNewOrder = async (order, dispatch, currentUser) => {
+  console.log("order:", order);
+  console.log("currentUser:", currentUser);
   try {
     const response = await axios.post(`${urlBase}/orders`, order, {
       headers: {

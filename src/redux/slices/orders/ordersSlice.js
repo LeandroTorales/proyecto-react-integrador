@@ -29,7 +29,7 @@ const ordersSlice = createSlice({
         orders: null,
       };
     },
-    createOrderFail: (state, action) => {
+    createOrderFail: (state) => {
       return {
         ...state,
         loading: false,

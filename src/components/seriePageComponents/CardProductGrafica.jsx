@@ -19,11 +19,11 @@ const CardProductGrafica = ({
     <div className="wrapper--cardProductGrafica">
       <img src={imgProduct} alt="imagen producto" className="img--product" />
       <div className="container--titleYPrice">
-        <h2 className="name--product">
+        <p className="name--product">
           {`GeForce RTX ${serie} Series ${modelo}${
             isTi ? "TI" : ""
           } ${marca} ${tamañoDeMemoria} ${tipoDeMemoriaGrafica}`}
-        </h2>
+        </p>
         <span className="price--product">${price}</span>
       </div>
       <ButtonComprar

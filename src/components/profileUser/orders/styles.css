@@ -39,6 +39,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .divition--informationOrder>p {
@@ -89,5 +90,22 @@
     .orderInProfile {
         height: 300px;
         width: 95%;
+        padding: 10px;
+    }
+
+    .divition--informationOrder {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .divition--informationOrder>p {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+
+    .divition--informationOrder>p>span {
+        text-align: center;
+        font-size: 0.8rem;
     }
 }

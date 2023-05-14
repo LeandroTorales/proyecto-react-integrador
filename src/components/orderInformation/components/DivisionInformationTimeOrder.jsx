@@ -13,12 +13,11 @@ const DivisionInformationTotalPriceOrder = ({
     <div className="information--order__division flexFix">
       <div>
         <p>
-          Total de la compra: <br />
-          <span>${totalPrice}</span>
+          Total de la compra:
+          <span> ${totalPrice}</span>
         </p>
         <p>
-          Cantidad de productos:
-          <span> {quantityProductsTotal} </span>
+          Cantidad de productos:<span> {quantityProductsTotal}</span>
         </p>
       </div>
       <div>

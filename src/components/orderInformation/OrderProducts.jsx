@@ -11,57 +11,36 @@ const OrderProducts = () => {
   const { orders } = useSelector((state) => state.ordersSlice);
   const { dataUser } = useSelector((state) => state.registerSlice);
   const { orderParam } = useParams();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     ordersOfCurrentUser(dispatch, dataUser);
   }, [dispatch, dataUser]);
 
-  const orderWithParam = () => {
-    return orders.data.filter((order) => order._id === orderParam)[0];
-  };
+  const order = orders.data.filter((order) => order._id === orderParam)[0];
 
   return (
     <div className="wrapper--informationOrder">
       <div className="wrapper--informationDate">
         <DivisionInformationDateOrder
-          date={dateFunc(orderWithParam().createdAt).date}
-          time={dateFunc(orderWithParam().createdAt).time}
-          orderId={orderWithParam()._id}
+          date={dateFunc(order.createdAt).date}
+          time={dateFunc(order.createdAt).time}
+          orderId={order._id}
         />
       </div>
       <DivisionInformationTotalPriceOrder
-        totalPrice={orderWithParam().total}
-        quantityProductsTotal={orderWithParam().items.reduce((acc, cur) => acc + cur.quantity, 0)}
-        address={orderWithParam().shippingDetails.address}
-        cellphone={orderWithParam().shippingDetails.cellphone}
-        location={orderWithParam().shippingDetails.location}
-        name={orderWithParam().shippingDetails.name}
+        totalPrice={order.total}
+        quantityProductsTotal={order.items.reduce((acc, cur) => acc + cur.quantity, 0)}
+        address={order.shippingDetails.address}
+        cellphone={order.shippingDetails.cellphone}
+        location={order.shippingDetails.location}
+        name={order.shippingDetails.name}
       />
       <div className="products--wrapperOrder">
         <h2>Productos comprados:</h2>
         <div className="wrapper--mapOrder">
-          {orderWithParam().items.map((order, key) => {
-            return (
-              <div className="product--order" key={key}>
-                <div className="container--imgProductOrder">
-                  <img src={order.img} alt="ImagenProducto" className="imgProductOrder" />
-                </div>
-                <div className="wrapper--productsInformation">
-                  <span>
-                    <span>{order.desc}</span>
-                  </span>
-                  <span>
-                    Precio unitario: <span>${order.price}</span>
-                  </span>
-                  <span>
-                    Cantidad: <span>{order.quantity}</span>
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-          {orderWithParam().items.map((order, key) => {
+          {order.items.map((order, key) => {
             return (
               <div className="product--order" key={key}>
                 <div className="container--imgProductOrder">
