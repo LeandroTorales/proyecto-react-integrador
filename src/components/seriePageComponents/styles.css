@@ -99,6 +99,8 @@
         position: fixed;
         display: flex;
         height: calc(100vh - 60px);
+        background: white;
+        flex-direction: column;
         left: -9000px;
     }
 
