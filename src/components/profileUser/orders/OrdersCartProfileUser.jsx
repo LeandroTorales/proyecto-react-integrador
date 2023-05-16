@@ -1,20 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
-import { ordersOfCurrentUser } from "../../../axios/axiosOrders";
+import { useSelector } from "react-redux";
+
 import { dateFunc } from "../../../utils/formatDateOrder";
 import { useNavigate } from "react-router-dom";
 
 const OrdersCartProfileUser = () => {
   const { orders } = useSelector((state) => state.ordersSlice);
-  const { dataUser } = useSelector((state) => state.registerSlice);
-
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (orders !== null) return ordersOfCurrentUser(dispatch, dataUser);
-  }, [dispatch, dataUser, orders]);
 
   const handlerMoreInfoOrder = (orderId) => {
     return navigate(`/orderInformation/${orderId}`);

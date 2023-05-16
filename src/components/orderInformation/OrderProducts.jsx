@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
-import { ordersOfCurrentUser } from "../../axios/axiosOrders";
+import { useSelector } from "react-redux";
+
 import { useParams } from "react-router-dom";
 import { dateFunc } from "../../utils/formatDateOrder";
 import DivisionInformationDateOrder from "./components/DivisionInformationDateOrder";
@@ -9,14 +9,7 @@ import DivisionInformationTotalPriceOrder from "./components/DivisionInformation
 
 const OrderProducts = () => {
   const { orders } = useSelector((state) => state.ordersSlice);
-  const { dataUser } = useSelector((state) => state.registerSlice);
   const { orderParam } = useParams();
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (orders !== null) return ordersOfCurrentUser(dispatch, dataUser);
-  }, [dispatch, dataUser, orders]);
 
   const order = orders.data.filter((order) => order._id === orderParam)[0];
 
