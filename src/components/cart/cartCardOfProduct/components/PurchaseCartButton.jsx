@@ -12,10 +12,7 @@ const PurchaseCartButton = () => {
   const { productsInCartArr } = useSelector((state) => state.cartSlice);
   const { shippingCost } = useSelector((state) => state.cartSlice);
   const { dataUser } = useSelector((state) => state.registerSlice);
-
-
   const { loading } = useSelector((state) => state.ordersSlice);
-  const { orders } = useSelector((state) => state.ordersSlice);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -42,10 +39,10 @@ const PurchaseCartButton = () => {
       await createNewOrder(orderData, dispatch, dataUser);
       if (createNewOrder) {
         await ordersOfCurrentUser(dispatch, dataUser);
-        dispatch(clearCartAction());
-        console.log(orders);
         const findOrderIdWithSlice = await ordersOfCurrentUser(dispatch, dataUser);
-        return navigate(`/orderInformation/${findOrderIdWithSlice.data.slice(-1)[0]._id}`);
+        alert("Gracias por comprar, te redirigiremos al detalle de la compra.");
+        navigate(`/orderInformation/${findOrderIdWithSlice.data.slice(-1)[0]._id}`);
+        return dispatch(clearCartAction());
       }
     } catch (error) {
       console.log(error);
