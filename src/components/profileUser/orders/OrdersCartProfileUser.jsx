@@ -13,15 +13,18 @@ const OrdersCartProfileUser = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    ordersOfCurrentUser(dispatch, dataUser);
-  }, [dispatch, dataUser]);
+    if (orders !== null) return ordersOfCurrentUser(dispatch, dataUser);
+  }, [dispatch, dataUser, orders]);
 
   const handlerMoreInfoOrder = (orderId) => {
     return navigate(`/orderInformation/${orderId}`);
   };
 
   return (
-    <div className="container--orders">
+    <div
+      className="container--orders"
+      style={{ justifyContent: `${orders !== null ? "space-between" : "center"}` }}
+    >
       <h2 style={{ textDecoration: "underline" }}>Tus ordenes de compra</h2>
       <div className="wrapper--orders">
         {orders !== null ? (

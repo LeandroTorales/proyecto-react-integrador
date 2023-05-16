@@ -27,6 +27,7 @@ const LoginForm = () => {
       const user = await loginUser(email, password);
 
       if (user) {
+        console.log("user:", user);
         dispatch(setDataUserOnLogin({ ...user.usuario, token: user.token }));
         dispatch(isLoginToggleAction());
         alert(`Has iniciado sesión correctamente, bienvenido devuelta, ${user.usuario.nombre} :).`);
