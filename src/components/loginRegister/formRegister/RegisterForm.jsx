@@ -10,13 +10,14 @@ import { useFormik } from "formik";
 import FormBox from "../form/FormBox";
 import {
   isLoginToggleAction,
+  setDataUserOnLogin,
   setDataUserRegisterFormAction,
 } from "../../../redux/slices/registerSlice";
 import ButtonFormSubmit from "../form/ButtonFormSubmit";
 import WrapperLoginFormToggle from "../wrapperLoginFormToggle/WrapperLoginFormToggle";
 import { registerInitialValues } from "../../../redux/slices/formik/initialValues";
 import { registerValidationShema } from "../../../redux/slices/formik/validationsSchemas";
-import { createUser } from "../../../axios/userAxios";
+import { createUser, loginUser } from "../../../axios/userAxios";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,10 @@ const RegisterForm = () => {
       const user = await createUser(name, email, password);
       if (user) {
         dispatch(setDataUserRegisterFormAction({ ...user.usuario, token: user.token }));
+        const userDispatchToken = await loginUser(email, password);
+        dispatch(
+          setDataUserOnLogin({ ...userDispatchToken.usuario, token: userDispatchToken.token })
+        );
         dispatch(isLoginToggleAction());
         alert("Te has registrado correctamente, muchas gracias.");
         actions.resetForm();

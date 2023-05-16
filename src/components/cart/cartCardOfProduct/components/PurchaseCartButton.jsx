@@ -12,6 +12,8 @@ const PurchaseCartButton = () => {
   const { productsInCartArr } = useSelector((state) => state.cartSlice);
   const { shippingCost } = useSelector((state) => state.cartSlice);
   const { dataUser } = useSelector((state) => state.registerSlice);
+
+
   const { loading } = useSelector((state) => state.ordersSlice);
   const { orders } = useSelector((state) => state.ordersSlice);
 

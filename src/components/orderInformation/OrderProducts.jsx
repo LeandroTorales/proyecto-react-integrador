@@ -15,8 +15,8 @@ const OrderProducts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    ordersOfCurrentUser(dispatch, dataUser);
-  }, [dispatch, dataUser]);
+    if (orders !== null) return ordersOfCurrentUser(dispatch, dataUser);
+  }, [dispatch, dataUser, orders]);
 
   const order = orders.data.filter((order) => order._id === orderParam)[0];
 
