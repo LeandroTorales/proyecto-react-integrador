@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createNewOrder } from "../../../../axios/axiosOrders";
+import { createNewOrder, ordersOfCurrentUser } from "../../../../axios/axiosOrders";
 import { clearCartAction } from "../../../../redux/slices/cart/cartSlice";
 import { orderArrNewProps } from "./renamePropsArrApi/renamePropsArr";
 import { fetchOrdersStart } from "../../../../redux/slices/orders/ordersSlice";
@@ -13,6 +13,7 @@ const PurchaseCartButton = () => {
   const { shippingCost } = useSelector((state) => state.cartSlice);
   const { dataUser } = useSelector((state) => state.registerSlice);
   const { loading } = useSelector((state) => state.ordersSlice);
+  const { orders } = useSelector((state) => state.ordersSlice);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -38,8 +39,11 @@ const PurchaseCartButton = () => {
     try {
       await createNewOrder(orderData, dispatch, dataUser);
       if (createNewOrder) {
-        navigate("/");
-        return dispatch(clearCartAction());
+        await ordersOfCurrentUser(dispatch, dataUser);
+        dispatch(clearCartAction());
+        console.log(orders);
+        const findOrderIdWithSlice = await ordersOfCurrentUser(dispatch, dataUser);
+        return navigate(`/orderInformation/${findOrderIdWithSlice.data.slice(-1)[0]._id}`);
       }
     } catch (error) {
       console.log(error);

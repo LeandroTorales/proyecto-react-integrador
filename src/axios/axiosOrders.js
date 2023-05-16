@@ -9,7 +9,6 @@ export const ordersOfCurrentUser = async (dispatch, currentUser) => {
         "x-token": currentUser.token,
       },
     });
-    console.log(response);
     dispatch(fetchOrderSuccess(response.data));
     return response.data;
   } catch (error) {
@@ -20,15 +19,12 @@ export const ordersOfCurrentUser = async (dispatch, currentUser) => {
 };
 
 export const createNewOrder = async (order, dispatch, currentUser) => {
-  console.log("order:", order);
-  console.log("currentUser:", currentUser);
   try {
     const response = await axios.post(`${urlBase}/orders`, order, {
       headers: {
         "x-token": currentUser.token,
       },
     });
-    console.log("response:", response);
     if (response) {
       ordersOfCurrentUser(dispatch, currentUser);
     }
