@@ -1,0 +1,111 @@
+.container--orders {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.wrapper--orders {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0px;
+}
+
+.orderInProfile {
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 500px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.divition--informationOrder {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.divition--informationOrder>p {
+    font-weight: 300;
+    color: rgb(210, 210, 210);
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+.divition--informationOrder>p>span {
+    font-weight: 500;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+.container--buttonMoreInfoOrder {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.button--moreInfoOrder {
+    padding: 8px;
+    border-radius: 10px;
+    background: white;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+}
+
+.button--moreInfoOrder:hover {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+@media (max-width:768px) {
+    .orderInProfile {
+        height: 300px;
+        width: 95%;
+        padding: 10px;
+    }
+
+    .divition--informationOrder {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .divition--informationOrder>p {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+
+    .divition--informationOrder>p>span {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}

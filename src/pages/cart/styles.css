@@ -6,3 +6,20 @@
     height: calc(100vh - 60px);
     margin-top: 60px;
 }
+
+.noItemsCartTextContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    color: rgb(128, 128, 128);
+
+}
+
+.noItemsCartTextContainer>p {
+    font-weight: 400;
+    font-size: 1.3rem;
+}

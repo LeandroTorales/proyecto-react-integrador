@@ -1,8 +1,7 @@
 import React from "react";
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import * as Yup from "yup";
 import { useFormik } from "formik";
 import { isLoginToggleAction, setDataUserOnLogin } from "../../../redux/slices/registerSlice";
 import FormBox from "../form/FormBox";
@@ -12,40 +11,27 @@ import ButtonFormSubmit from "../form/ButtonFormSubmit";
 import LineDivisoryForm from "../form/LineDivisoryForm";
 import WrapperLoginFormToggle from "../wrapperLoginFormToggle/WrapperLoginFormToggle";
 import ButtonToggleForm from "../buttonToggleForm/ButtonToggleForm";
+import { loginInitialValues } from "../../../redux/slices/formik/initialValues";
+import { loginValidationShema } from "../../../redux/slices/formik/validationsSchemas";
+import { loginUser } from "../../../axios/userAxios";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { dataAllUsersArr } = useSelector((state) => state.registerSlice);
-
-  const validationSchema = Yup.object({
-    email: Yup.string().email("Email incorrecto.").required("Email requerido."),
-    password: Yup.string().required("Contraseña requerida."),
-  });
-
   const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log("values:", values);
-      const findUserInArr = () => {
-        return dataAllUsersArr.find(
-          (user) => user.email === values.email && user.password === values.password
-        );
-      };
-      if (findUserInArr === undefined) {
-        return alert("No se ha encontrado un usuario. Vuelve a intentarlo.");
-      } else {
-        dispatch(setDataUserOnLogin(findUserInArr()));
+    initialValues: loginInitialValues,
+    validationSchema: loginValidationShema,
+    onSubmit: async (values, actions) => {
+      const { email, password } = values;
+      const user = await loginUser(email, password);
+
+      if (user) {
+        dispatch(setDataUserOnLogin({ ...user.usuario, token: user.token }));
         dispatch(isLoginToggleAction());
-        alert(
-          `Has iniciado sesión correctamente, bienvenido devuelta, ${findUserInArr().name} :).`
-        );
-        setTimeout(() => {
+        alert(`Has iniciado sesión correctamente, bienvenido devuelta, ${user.usuario.nombre} :).`);
+        actions.resetForm();
+        return setTimeout(() => {
           navigate("/");
         }, 3000);
       }

@@ -47,6 +47,9 @@ const cartSlice = createSlice({
         priceOfCart: getTotalPriceCart(state.productsInCartArr),
       };
     },
+    clearCartAction: (state) => {
+      return { ...state, productsInCartArr: initialState.productsInCartArr };
+    },
   },
 });
 

@@ -1,0 +1,21 @@
+.containerProfile {
+    width: 95%;
+    background: rgb(0, 26, 56);
+    background: -moz-linear-gradient(180deg, rgba(0, 26, 56, 1) 0%, rgba(20, 54, 94, 1) 50%, rgba(0, 26, 56, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0, 26, 56, 1) 0%, rgba(20, 54, 94, 1) 50%, rgba(0, 26, 56, 1) 100%);
+    background: linear-gradient(180deg, rgba(0, 26, 56, 1) 0%, rgba(20, 54, 94, 1) 50%, rgba(0, 26, 56, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001a38", endColorstr="#001a38", GradientType=1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 20px;
+    gap: 20px;
+}
+
+@media (max-width:768px) {
+    .containerProfile {
+        width: 100%;
+    }
+}

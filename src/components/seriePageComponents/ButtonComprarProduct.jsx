@@ -10,7 +10,7 @@ const ButtonComprar = ({ ...props }) => {
       className="button--comprarProducto"
       onClick={() => dispatch(addToCartProductAction(props))}
     >
-      ButtonComprar
+      Agregar al carrito
     </button>
   );
 };

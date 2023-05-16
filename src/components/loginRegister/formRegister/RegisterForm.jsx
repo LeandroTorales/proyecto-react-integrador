@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import * as Yup from "yup";
 import LineDivisoryForm from "../form/LineDivisoryForm";
 import ButtonToggleForm from "../buttonToggleForm/ButtonToggleForm";
 import InputComponent from "../input/InputComponent";
@@ -11,49 +10,33 @@ import { useFormik } from "formik";
 import FormBox from "../form/FormBox";
 import {
   isLoginToggleAction,
-  setDataAllUsersAction,
   setDataUserRegisterFormAction,
 } from "../../../redux/slices/registerSlice";
 import ButtonFormSubmit from "../form/ButtonFormSubmit";
 import WrapperLoginFormToggle from "../wrapperLoginFormToggle/WrapperLoginFormToggle";
+import { registerInitialValues } from "../../../redux/slices/formik/initialValues";
+import { registerValidationShema } from "../../../redux/slices/formik/validationsSchemas";
+import { createUser } from "../../../axios/userAxios";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const validationSchema = Yup.object({
-    name: Yup.string()
-      .min(2, "Nombre muy corto.")
-      .max(50, "Nombre muy largo.")
-      .required("Nombre requerido."),
-    surname: Yup.string()
-      .min(2, "Nombre muy corto.")
-      .max(50, "Nombre muy largo.")
-      .required("Apellido requerido."),
-    email: Yup.string().email("Email incorrecto.").required("Email requerido."),
-    cellphone: Yup.number("Tiene que ser numeros.")
-      .integer("Solo se aceptan numeros enteros.")
-      .required("El numero de telefono es obligatorio."),
-    password: Yup.string().required("Contraseña requerida."),
-  });
-
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      surname: "",
-      email: "",
-      cellphone: "",
-      password: "",
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      dispatch(setDataUserRegisterFormAction(values));
-      dispatch(setDataAllUsersAction(values));
-      dispatch(isLoginToggleAction());
-      alert("Te has registrado correctamente, muchas gracias.");
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
+    initialValues: registerInitialValues,
+    validationSchema: registerValidationShema,
+    onSubmit: async (values, actions) => {
+      const { name, email, password } = values;
+      const user = await createUser(name, email, password);
+      if (user) {
+        dispatch(setDataUserRegisterFormAction({ ...user.usuario, token: user.token }));
+        dispatch(isLoginToggleAction());
+        alert("Te has registrado correctamente, muchas gracias.");
+        actions.resetForm();
+        return setTimeout(() => {
+          navigate("/");
+        }, 1500);
+      }
     },
   });
 

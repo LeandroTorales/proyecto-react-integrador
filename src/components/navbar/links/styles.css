@@ -36,12 +36,40 @@
 }
 
 .icon {
-    font-size: 1.4rem;
+    font-size: 2rem;
     cursor: pointer;
     background: transparent;
     color: white;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.container--bubbleCount {
+    width: 0px;
+    height: 0px;
+}
+
+.bubble--count__cartIcon {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px black;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    top: -27px;
+    right: -22px;
 }
 
 @media (max-width: 768px) {

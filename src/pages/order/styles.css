@@ -1,0 +1,22 @@
+.wrapper--orderInformationPage {
+    margin-top: 60px;
+    height: calc(120vh - 60px);
+    background-color: white;
+    background: rgb(0, 26, 56);
+    background: -moz-linear-gradient(180deg, rgba(0, 26, 56, 1) 0%, rgba(20, 54, 94, 1) 50%, rgba(0, 26, 56, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0, 26, 56, 1) 0%, rgba(20, 54, 94, 1) 50%, rgba(0, 26, 56, 1) 100%);
+    background: linear-gradient(180deg, rgba(0, 26, 56, 1) 0%, rgba(20, 54, 94, 1) 50%, rgba(0, 26, 56, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001a38", endColorstr="#001a38", GradientType=1);
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width:768px) {
+    .wrapper--orderInformationPage {
+        height: calc(150vh - 60px);
+    }
+}

@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  dataAllUsersArr: [],
   dataUser: [],
   isLogin: false,
 };
@@ -16,9 +15,6 @@ const registerSlice = createSlice({
     logoutAction: (state) => {
       return { ...state, dataUser: initialState.dataUser };
     },
-    setDataAllUsersAction: (state, action) => {
-      return { ...state, dataAllUsersArr: [...state.dataAllUsersArr, action.payload] };
-    },
     setDataUserOnLogin: (state, action) => {
       return { ...state, dataUser: action.payload };
     },
@@ -31,7 +27,6 @@ const registerSlice = createSlice({
 export const {
   setDataUserRegisterFormAction,
   logoutAction,
-  setDataAllUsersAction,
   setDataUserOnLogin,
   isLoginToggleAction,
 } = registerSlice.actions;

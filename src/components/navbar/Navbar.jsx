@@ -7,7 +7,6 @@ import BarsHamburguesaNavbar from "./barsHamburguesa/BarsHamburguesaNavbar";
 import IconCart from "./links/IconCart";
 import FondoOnBlur from "./onBlur/FondoOnBlur";
 import { useSelector } from "react-redux";
-import ButtonLogout from "../buttonLogout/ButtonLogout";
 
 const Navbar = () => {
   const { isLogin } = useSelector((state) => state.registerSlice);
@@ -21,7 +20,7 @@ const Navbar = () => {
           <LinkNavbarComponent nameLink={"Series"} to={"/series"} />
           <LinkNavbarComponent nameLink={"Acerca de"} to={"/acercaDe"} />
           {isLogin === true ? (
-            <ButtonLogout />
+            <LinkNavbarComponent nameLink={"Tu perfil"} to={"/profileUser"} />
           ) : (
             <LinkNavbarComponent nameLink={"Login/Register"} to={"/loginRegister"} />
           )}

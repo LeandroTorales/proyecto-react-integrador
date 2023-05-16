@@ -1,0 +1,25 @@
+.division--sectionFilter {
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.division--sectionFilter>p {
+    font-size: 1.2rem;
+}
+
+.division--sectionFilter>button {
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0px 10px;
+    text-transform: uppercase;
+}
+
+.division--sectionFilter>button:hover {
+    text-decoration: underline;
+}
